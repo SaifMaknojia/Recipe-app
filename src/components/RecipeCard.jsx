@@ -6,7 +6,16 @@ const RecipeCard = (props) => {
   const { title, image, id } = props;
   const navigate = useNavigate();
   return (
-    <Grid item xs={12} md={6} lg={4}>
+    <Grid
+      container
+      direction="column"
+      alignItems="center"
+      justifyContent="center"
+      item
+      xs={12}
+      md={6}
+      lg={4}
+    >
       <Card
         sx={{ maxWidth: 345 }}
         style={{ cursor: "pointer" }}
