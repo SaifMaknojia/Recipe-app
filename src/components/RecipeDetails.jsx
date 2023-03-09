@@ -84,6 +84,8 @@ const RecipeDetails = (props) => {
     return flag ? "Yes" : "No";
   };
 
+  const tagRegExp = new RegExp("<s*[^>]*>", "g");
+
   return (
     <>
       {recipeDetailsLoading ? (
@@ -255,7 +257,9 @@ const RecipeDetails = (props) => {
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography>{recipeDetails?.instructions}</Typography>
+              <Typography>
+                {recipeDetails?.instructions.replace(tagRegExp, "")}
+              </Typography>
             </AccordionDetails>
           </Accordion>
         </>
